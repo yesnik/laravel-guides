@@ -1,2 +1,3 @@
-# laravel-guides
+# Laravel Guides
+
 Laravel guides
