@@ -2,6 +2,8 @@
 
 ## Working with variables
 
+Views are located at `resources/views` folder.
+
 **Escape variable**
 
 ```blade
