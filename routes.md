@@ -20,3 +20,15 @@ In the template `resources/view/hello.blade.php`:
 
 PHP doesn't undestand blade syntax, so Laravel converts 
 this template to PHP-file and puts it to `storage/framework/views/***.php`
+
+## Add wildcard to route
+
+```php
+// routes/web.php
+
+Route::get('/posts/{id}', function($id) {
+    return $id;
+});
+```
+If we access URI */posts/123* then `$id` will be *123*.
+
