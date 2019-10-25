@@ -1,0 +1,22 @@
+# Routes
+
+## Pass variable to view
+
+```php
+// routes/web.php
+
+Route::get('/hello', function() {
+    return view('hello', [
+        'name' => request('name'),
+    ]);
+});
+```
+
+In the template `resources/view/hello.blade.php`:
+
+```
+<h1>Hello {{ $name }}</h1>
+```
+
+PHP doesn't undestand blade syntax, so Laravel converts 
+this template to PHP-file and puts it to `storage/framework/views/***.php`
