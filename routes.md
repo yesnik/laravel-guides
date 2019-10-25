@@ -32,3 +32,13 @@ Route::get('/posts/{id}', function($id) {
 ```
 If we access URI */posts/123* then `$id` will be *123*.
 
+## Show 404 page
+
+```php
+// routes/web.php
+
+Route::get('/posts/{id}', function($id) {
+    // ...
+    abort(404, 'Post not found');
+});
+```
