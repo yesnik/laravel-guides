@@ -1,5 +1,13 @@
 # Routes
 
+## Call controller
+
+```php
+// routes/web.php
+
+Route::get('/posts/{id}', 'PostsController@show');
+```
+
 ## Pass variable to view
 
 ```php
