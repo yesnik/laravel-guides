@@ -1,5 +1,11 @@
 # Controllers
 
+## Generate controller
+
+```bash
+php artisan make:controller PostsController
+```
+
 ## Render view
 
 ```php
