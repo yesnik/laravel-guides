@@ -12,7 +12,11 @@ File `resources/views/articles/edit.blade.php`:
     @csrf
     @method('PUT')
 
-    <input type="text" name="title" value="{{ $article->title }}">
+    <input class="{{ $errors->has('title') ? 'is-danger' : '' }}" type="text" name="title">
+    
+    @error('title')
+        <p class="help is-danger">{{ $errors->first('title') }}</p>
+    @enderror
     <button type="submit">Submit</button>
 </form>
 ```
