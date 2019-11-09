@@ -25,3 +25,36 @@ App\Post::take(3)->latest()->get();
 
 App\Post::where('published', true)->get();
 ```
+
+## Define route key
+
+File `app/Article.php`:
+
+```php
+class Article extends Model
+{
+    public function getRouteKey()
+    {
+        return 'slug';
+    }
+}
+```
+
+File `routes/web.php`:
+
+```php
+Route::get('/articles/{article}', 'ArticlesController@show');
+```
+
+File `app/Http/Controllers/ArticlesController.php`:
+
+```php
+class ArticlesController extends Controller
+{
+    public function show(Article $article)
+    {
+        // Laravel will find article by "slug"
+        return view('articles.show', ['article' => $article]);
+    }
+}
+```
