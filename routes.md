@@ -5,7 +5,15 @@
 ```php
 // routes/web.php
 
-Route::get('/posts/{id}', 'PostsController@show');
+Route::get('/posts/{id}', 'PostsController@show')->name('posts.show');
+```
+
+## Call named route
+
+In the view:
+
+```blade
+<a href="{{ route('posts.show', $post) }}">Some title</a>
 ```
 
 ## Pass variable to view
