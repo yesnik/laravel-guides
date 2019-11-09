@@ -20,6 +20,7 @@ App\Post::latest('updated_at')->get(); // ORDER BY updated_at DESC
 App\Post::first();
 
 App\Post::take(2)->get();
+App\Post::take(3)->latest()->get();
 
 App\Post::where('published', true)->get();
 ```
