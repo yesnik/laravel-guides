@@ -4,6 +4,9 @@
 
 ```bash
 php artisan make:controller PostsController
+
+# Create controller with 7 CRUD actions:
+php artisan make:controller -r PostsController
 ```
 
 ## Render view
