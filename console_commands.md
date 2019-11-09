@@ -5,3 +5,6 @@
 - `php artisan serve` - run development server
 - `php artisan tinker` - run interactive console
 
+## Generate code
+
+- `php artisan make:model Article -m` - create model with migration
