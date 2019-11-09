@@ -26,6 +26,25 @@ App\Post::take(3)->latest()->get();
 App\Post::where('published', true)->get();
 ```
 
+## Example of the model
+
+File `app/Article.php`:
+
+```php
+class Article extends Model
+{
+    // Mass assignment allowed for these attributes
+    protected $fillable = ['title', 'excerpt', 'body'];
+    
+    // See "Define route key" section on this page
+    public function getRouteKey()
+    {
+        return 'slug';
+    }
+}
+
+```
+
 ## Define route key
 
 File `app/Article.php`:
