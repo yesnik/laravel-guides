@@ -1,5 +1,24 @@
 # Controllers
 
+## Useful methods
+
+### Get POST / GET params
+
+```php
+request()->all();
+request('title');
+```
+
+### Redirect
+
+```php
+public function store()
+{
+    // ...
+    return redirect('/articles');
+}
+```
+
 ## Generate controller
 
 ```bash
