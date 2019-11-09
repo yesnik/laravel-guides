@@ -7,4 +7,5 @@
 
 ## Generate code
 
+- `php artisan make:controller ArticlesController` - create controller
 - `php artisan make:model Article -m` - create model with migration
