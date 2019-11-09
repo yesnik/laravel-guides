@@ -23,7 +23,7 @@ class PostsController extends Controller
             abort(404);
         }
 
-        return view('posts/show', [
+        return view('posts.show', [
             'post' => $post,
         ]);
     }
