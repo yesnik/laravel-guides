@@ -13,6 +13,7 @@ php artisan make:model Post -mc
 
 ```php
 App\Post::all();
+Tag::all()->pluck('name')->toArray(); // ['php', 'python', 'ruby']
 
 App\Post::latest()->get(); // ORDER BY created_at DESC
 App\Post::latest('updated_at')->get(); // ORDER BY updated_at DESC
