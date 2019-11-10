@@ -30,6 +30,22 @@ Schema::create('assignments', function (Blueprint $table) {
 });
 ```
 
+### Create linking table for ManyToMany relation
+
+```php
+Schema::create('article_tag', function (Blueprint $table) {
+    $table->bigIncrements('id');
+    $table->unsignedBigInteger('article_id');
+    $table->unsignedBigInteger('tag_id');
+    $table->timestamps();
+
+    $table->unique(['article_id', 'tag_id']);
+
+    $table->foreign('article_id')->references('id')->on('articles');
+    $table->foreign('tag_id')->references('id')->on('tags');
+});
+```
+
 ### Add column / Add foreign key
 
 ```php
