@@ -2,6 +2,12 @@
 
 ## Console commands
 
+**Generate factory class**
+
+```bash
+php artisan make:factory ArticleFactory -m 'App\Article'
+```
+
 **Generate records using factory**
 
 ```php
