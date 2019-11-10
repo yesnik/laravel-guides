@@ -79,7 +79,7 @@ class ArticlesController extends Controller
 ```
 ## Relations
 
-### Methods
+### hasMany / belongsTo
 
 ```php
 $user = App\User::find(1);
@@ -110,4 +110,35 @@ class User extends Authenticatable
         return $this->hasMany(Article::class);
     }
 }
+```
+
+### belongsToMany
+
+```php
+class Article extends Model
+{
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+}
+
+class Tag extends Model
+{
+    public function articles()
+    {
+        return $this->belongsToMany(Article::class);
+    }
+}
+```
+
+To organize many-to-many relationship we need to create linking table `article_tag`.
+It will allow us to do this:
+
+```php
+$article = App\Article::find(1);
+$article->tags;
+
+$tag = App\Tag::first();
+$tag->articles;
 ```
