@@ -6,6 +6,7 @@
 // routes/web.php
 
 Route::get('/posts/{id}', 'PostsController@show')->name('posts.show');
+Route::get('/articles', 'ArticlesController@index')->name('articles.index');
 ```
 
 ## Call named route
@@ -14,6 +15,12 @@ In the view:
 
 ```blade
 <a href="{{ route('posts.show', $post) }}">Some title</a>
+```
+
+If you want to add GET-param `?tag=python` to the link:
+
+```blade
+<a href="{{ route('articles.index', ['tag' => 'python']) }}">Python articles</a>
 ```
 
 ## Pass variable to view
