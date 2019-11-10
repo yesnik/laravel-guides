@@ -77,3 +77,37 @@ class ArticlesController extends Controller
     }
 }
 ```
+## Relations
+
+### Methods
+
+```php
+$user = App\User::find(1);
+$user->articles;
+
+$article = App\Article::find(5);
+$article->user;
+```
+
+It's possible because we defined methods:
+
+```php
+class Article extends Model
+{
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+}
+```
+
+```php
+class User extends Authenticatable
+{
+    // ...
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
+}
+```
