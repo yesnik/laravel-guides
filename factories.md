@@ -10,10 +10,15 @@ php artisan make:factory ArticleFactory -m 'App\Article'
 
 **Generate records using factory**
 
-```php
+```bash
 php artisan tinker
+```
+```php
+// Create 5 records of User
+factory(App\User::class, 5)->create()
 
->>> factory(App\User::class, 5)->create()
+// Create 3 articles for user with id = 5
+factory(App\Article::class, 3)->create(['user_id' => 5])
 ```
 
 ## Factory example 
