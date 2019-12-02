@@ -1,6 +1,7 @@
 # Console commands
 
 - `composer global require laravel/installer` - download the Laravel installer using Composer
+- `php artisan db:seed` - seed database with `database/seeds/DatabaseSeeder.php`
 - `laravel new mysite` - create project
 - `php artisan serve` - run development server
 - `php artisan tinker` - run interactive console
