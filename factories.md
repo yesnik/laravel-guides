@@ -7,7 +7,57 @@ PHP library [Faker](https://github.com/fzaninotto/Faker) is used to generate fak
 **Generate factory class**
 
 ```bash
-php artisan make:factory ArticleFactory -m 'App\Article'
+php artisan make:factory EmployeeFactory --model=Employee
+```
+
+This command will create `database/factories/EmployeeFactory.php`. Edit this file:
+
+```php
+use App\Employee;
+use Faker\Generator as Faker;
+
+$factory->define(Employee::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name,
+        'email' => $faker->unique->companyEmail,
+        'start_date' => $faker->date,
+        'due_date' => $faker->date 
+    ];
+});
+```
+
+**Generate seeder**
+
+```bash
+php artisan make:seeder EmployeesTableSeeder
+```
+
+This command will create file `database/seeds/EmployeesTableSeeder.php`. Edit this file:
+
+```php
+use Illuminate\Database\Seeder;
+
+class EmployeesTableSeeder extends Seeder
+{
+    public function run()
+    {
+        factory(App\Employee::class, 50)->create();
+    }
+}
+```
+
+**Call custom seeder from DatabaseSeeder**
+
+Edit file `database/seeds/DatabaseSeeder.php`:
+
+```php
+class DatabaseSeeder extends Seeder
+{
+    public function run()
+    {
+        $this->call(EmployeesTableSeeder::class);
+    }
+}
 ```
 
 **Generate records using factory**
@@ -46,6 +96,17 @@ $factory->define(Article::class, function (Faker $faker) {
         'excerpt' => $faker->sentence,
         'body' => $faker->paragraph,
         'user_id' => factory(\App\User::class),
+    ];
+});
+```
+
+```php
+$factory->define(Employee::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name,
+        'email' => $faker->unique->companyEmail,
+        'start_date' => $faker->date,
+        'due_date' => $faker->date 
     ];
 });
 ```
