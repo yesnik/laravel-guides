@@ -21,10 +21,11 @@ php artisan migrate:rollback --step=1
 Schema::create('assignments', function (Blueprint $table) {
     $table->bigIncrements('id');
     
-    $table->string('slug');
+    $table->string('slug')->unique();
     $table->text('body');
     $table->boolean('completed')->default(false);
     $table->timestamp('due_date')->nullable();
+    $table->date('cancelled_on');
     
     $table->timestamps();
 });
