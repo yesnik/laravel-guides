@@ -1,5 +1,7 @@
 # Factories
 
+PHP library [Faker](https://github.com/fzaninotto/Faker) is used to generate fake values.
+
 ## Console commands
 
 **Generate factory class**
