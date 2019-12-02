@@ -4,6 +4,7 @@
 - `laravel new mysite` - create project
 - `php artisan serve` - run development server
 - `php artisan tinker` - run interactive console
+- `php artisan migrate` - apply migrations
 
 ## Generate code
 
