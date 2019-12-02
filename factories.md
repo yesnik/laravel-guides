@@ -60,6 +60,12 @@ class DatabaseSeeder extends Seeder
 }
 ```
 
+**Seed database**
+
+```bash
+php artisan db:seed
+```
+
 **Generate records using factory**
 
 ```bash
