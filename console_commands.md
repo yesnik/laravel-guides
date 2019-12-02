@@ -10,3 +10,4 @@
 
 - `php artisan make:controller ArticlesController` - create controller
 - `php artisan make:model Article -m` - create model with migration
+- `php artisan make:seeder EmployeesTableSeeder` - create `database/seeds/EmployeesTableSeeder.php`
