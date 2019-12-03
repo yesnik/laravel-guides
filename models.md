@@ -1,11 +1,9 @@
 # Models
 
-## Generate model
+## Console commands
 
 ```bash
-php artisan make:model Post
-
-# with migration and controller
+# Create model with migration and controller
 php artisan make:model Post -mc
 ```
 
