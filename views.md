@@ -27,6 +27,8 @@ File `resources/views/layout.blade.php`:
 
 ## Working with variables
 
+### Escaping
+
 Views are located at `resources/views` folder.
 
 **Escape variable**
@@ -41,4 +43,15 @@ Laravel applies `htmlspecialchars()` to this variable.
 
 ```blade
 {!! $name !!}
+```
+
+### foreach
+
+```php
+@foreach ($products as $product)
+  <tr>
+    <td>{{ $product->id }}</td>
+    <td>{{ $product->name }}</td>
+  </tr>
+@endforeach
 ```
