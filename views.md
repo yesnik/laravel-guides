@@ -25,6 +25,12 @@ File `resources/views/layout.blade.php`:
 </html>
 ```
 
+## Show Pagination links
+
+```blade
+{!! $products->links() !!}
+```
+
 ## Working with variables
 
 ### Escaping
