@@ -25,3 +25,15 @@ File `resources/views/articles/edit.blade.php`:
     <button type="submit">Submit</button>
 </form>
 ```
+
+## Form for DELETE
+
+```php
+<form action="{{ route('products.destroy',$product->id) }}" method="POST">
+  @csrf
+
+  @method('DELETE')
+
+  <button type="submit">Delete</button>
+</form>
+```
