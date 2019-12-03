@@ -5,6 +5,9 @@
 ```bash
 # Create controller with 7 CRUD actions
 php artisan make:controller PostsController -r
+
+# Create controller for model
+php artisan make:controller ProductController --resource --model=Product
 ```
 
 ## Useful methods
