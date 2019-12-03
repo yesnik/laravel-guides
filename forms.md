@@ -28,7 +28,7 @@ File `resources/views/articles/edit.blade.php`:
 
 ## Form for DELETE
 
-```php
+```blade
 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
   @csrf
 
