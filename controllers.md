@@ -41,8 +41,7 @@ This will return JSON:
          "due_date":"2005-08-19",
          "created_at":"2019-12-02 09:41:18",
          "updated_at":"2019-12-02 09:41:18"
-      },
-      ...
+      }
    ],
    "first_page_url":"http:\/\/127.0.0.1:8000\/api\/employee?page=1",
    "from":1,
