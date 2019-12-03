@@ -1,5 +1,12 @@
 # Controllers
 
+## Console commands
+
+```bash
+# Create controller with 7 CRUD actions
+php artisan make:controller PostsController -r
+```
+
 ## Useful methods
 
 ### Get POST / GET params
@@ -54,15 +61,6 @@ This will return JSON:
    "to":10,
    "total":50
 }
-```
-
-## Generate controller
-
-```bash
-php artisan make:controller PostsController
-
-# Create controller with 7 CRUD actions:
-php artisan make:controller -r PostsController
 ```
 
 ## Render view
