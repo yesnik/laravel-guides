@@ -10,6 +10,7 @@
 
 ## Generate code
 
+- `php artisan make:command DeleteOldProducts` - create `app/Console/Commands/DeleteOldProducts.php`
 - `php artisan make:controller ArticlesController -r` - create controller (with CRUD actions)
 - `php artisan make:factory EmployeeFactory --model=Employee` - create `database/factories/EmployeeFactory.php` for `Employee`
 - `php artisan make:model Article -m` - create model with migration
