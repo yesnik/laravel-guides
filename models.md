@@ -30,6 +30,9 @@ $post = Post::firstOrCreate(['name' => 'War and Peace']);
 $post = Post::firstOrNew(['name' => 'War and Peace']);
 $post = Post::updateOrCreate(['name' => 'War and Peace']);
 
+Post::where('active', 0)->delete();
+$post = Post::find(1);
+$post->delete();
 ```
 
 ## Example of the model
