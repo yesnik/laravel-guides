@@ -28,9 +28,12 @@ class DeleteOldProducts extends Command
         $this->error('Some error');
 
         \Log::info("This will be logged");
+        \Log::error("This Error will be logged");
     }
 }
 ```
+
+Log files are stored at folder `storage/logs/`.
 
 ### Add command to scheduler
 
