@@ -59,3 +59,11 @@ See other scheduler [frequency options](https://laravel.com/docs/master/scheduli
 - `->hourly();`
 - `->dailyAt('13:00');`
 - `->monthly();`
+
+### Add scheduler to crontab
+
+Edit `crontab` file on your server:
+
+```
+* * * * * cd /your-project-folder && php artisan schedule:run >> /dev/null 2>&1
+```
