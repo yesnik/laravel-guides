@@ -28,6 +28,8 @@ Post::where('created_at', '>=', '2019-06-01')->get()->count();
 
 $post = Post::firstOrCreate(['name' => 'War and Peace']);
 $post = Post::firstOrNew(['name' => 'War and Peace']);
+$post = Post::updateOrCreate(['name' => 'War and Peace']);
+
 ```
 
 ## Example of the model
