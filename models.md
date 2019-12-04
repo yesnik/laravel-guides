@@ -25,6 +25,9 @@ Post::take(3)->latest()->get();
 
 Post::where('published', true)->get();
 Post::where('created_at', '>=', '2019-06-01')->get()->count();
+
+$post = Post::firstOrCreate(['name' => 'War and Peace']);
+$post = Post::firstOrNew(['name' => 'War and Peace']);
 ```
 
 ## Example of the model
