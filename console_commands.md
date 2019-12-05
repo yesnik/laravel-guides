@@ -15,4 +15,5 @@
 - `php artisan make:factory EmployeeFactory --model=Employee` - create `database/factories/EmployeeFactory.php` for `Employee`
 - `php artisan make:model Article -m` - create model with migration
 - `php artisan notifications:table` - create migration for notifications table
+- `php artisan make:notification ProductCreated` - create `app/Notifications/ProductCreated.php`
 - `php artisan make:seeder EmployeesTableSeeder` - create `database/seeds/EmployeesTableSeeder.php`
