@@ -65,3 +65,19 @@ Route::get('/posts/{id}', function($id) {
     abort(404, 'Post not found');
 });
 ```
+
+## Disable CSRF protection for URL
+
+Add URL to `$except` variable at `app/Http/Middleware/VerifyCsrfToken.php`:
+
+```php
+/**
+ * The URIs that should be excluded from CSRF verification.
+ *
+ * @var array
+ */
+protected $except = [
+    '/home/postShow',
+];
+```
+
