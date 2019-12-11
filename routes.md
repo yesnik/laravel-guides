@@ -9,6 +9,17 @@ Route::get('/posts/{id}', 'PostsController@show')->name('posts.show');
 Route::get('/articles', 'ArticlesController@index')->name('articles.index');
 ```
 
+## Routes for api
+
+```php
+// routes/api.php
+
+// URL: /api/test
+Route::get('/test', function (Request $request) {
+    return ['greeting' => 'Hello user!'];
+});
+```
+
 ## Call named route
 
 In the view:
