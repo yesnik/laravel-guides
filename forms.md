@@ -1,5 +1,7 @@
 # Forms
 
+You can use [LaravelCollective/html](https://github.com/LaravelCollective/html) package to work with forms.
+
 ## Form example
 
 We need to include `@csrf` in the form.
