@@ -25,7 +25,12 @@ request('title');
 public function store()
 {
     // ...
+    
+    // Way 1
     return redirect('/articles');
+    
+    // Way 2
+    return redirect()->route('products.index');
 }
 ```
 
@@ -63,6 +68,23 @@ This will return JSON:
    "prev_page_url":null,
    "to":10,
    "total":50
+}
+```
+
+### validate
+
+```php
+public function store(Request $request)
+{
+    $request->validate([
+        'name' => 'required|max:25',
+        'detail' => 'required',
+    ]);
+
+    Product::create($request->all());
+
+    return redirect()->route('products.index')
+            ->with('success','Product created successfully.');
 }
 ```
 
