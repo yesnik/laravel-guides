@@ -51,7 +51,21 @@ Laravel applies `htmlspecialchars()` to this variable.
 {!! $name !!}
 ```
 
-### if
+### @error
+
+Within an `@error` directive, you may echo the `$message` variable to display the error message.
+
+```blade
+<!-- /resources/views/post/create.blade.php -->
+
+<input id="title" type="text" class="@error('title') is-invalid @enderror">
+
+@error('title')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
+```
+
+### @if
 
 ```php
 @if (Session::has('success'))
@@ -67,7 +81,7 @@ Laravel applies `htmlspecialchars()` to this variable.
 @endif
 ```
 
-### foreach
+### @foreach
 
 ```php
 @foreach ($products as $product)
