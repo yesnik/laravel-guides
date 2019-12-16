@@ -53,7 +53,7 @@ public function store(Request $request)
     $request->validate([
         'name' => 'required|max:25',
         'detail' => 'required',
-        'email' => 'email|nullable',
+        'email' => 'email|nullable|unique:claims',
     ]);
 
     \App\Product::create($request->all());
