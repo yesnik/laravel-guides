@@ -79,9 +79,10 @@ public function store(Request $request)
     $request->validate([
         'name' => 'required|max:25',
         'detail' => 'required',
+        'email' => 'email|nullable',
     ]);
 
-    Product::create($request->all());
+    \App\Product::create($request->all());
 
     return redirect()->route('products.index')
             ->with('success','Product created successfully.');
