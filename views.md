@@ -31,6 +31,16 @@ File `resources/views/layout.blade.php`:
 {!! $products->links() !!}
 ```
 
+## Helper methods
+
+### old()
+
+Display the previous value of variable in case of error:
+
+```blade
+<input type="text" name="last_name" value={{ old('last_name') }}>
+```
+
 ## Working with variables
 
 ### Escaping
@@ -50,6 +60,8 @@ Laravel applies `htmlspecialchars()` to this variable.
 ```blade
 {!! $name !!}
 ```
+
+## Directives
 
 ### @error
 
