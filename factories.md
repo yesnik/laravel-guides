@@ -20,8 +20,10 @@ $factory->define(Employee::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique->companyEmail,
+        'moto' => $faker->sentence,
+        'bio' => $faker->text,
         'start_date' => $faker->date,
-        'due_date' => $faker->date 
+        'created_at' => $faker->dateTimeThisYear, 
     ];
 });
 ```
