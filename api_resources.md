@@ -13,10 +13,10 @@ API resources are made of 2 entities:
 ## Console commands
 
 ```bash
-# Single resource
+# Create a resource class
 php artisan make:resource Product
 
-# Collection resource
+# Create a resource collection
 php artisan make:resource ProductCollection
 ```
 Files will be created at `app/Http/Resources` folder.
