@@ -95,10 +95,12 @@ $factory->define(User::class, function (Faker $faker) {
 });
 ```
 
+We can create related entity - `App\User`:
+
 ```php
 $factory->define(Article::class, function (Faker $faker) {
     return [
-        'title' => $faker->sentence,
+        'title' => $faker->title,
         'excerpt' => $faker->sentence,
         'body' => $faker->paragraph,
         'user_id' => factory(\App\User::class),
