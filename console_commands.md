@@ -2,6 +2,7 @@
 
 - `composer global require laravel/installer` - download the Laravel installer using Composer
 - `laravel new mysite` - create project
+- `php artisan config:clear` - clear configuration cache
 - `php artisan route:list` - show routes
 - `php artisan serve` - run development server
 - `php artisan tinker` - run interactive console
