@@ -63,6 +63,25 @@ public function store(Request $request)
 }
 ```
 
+We can exclude current object's email from validation:
+
+```php
+use Illuminate\Validation\Rule;
+
+public function update(Request $request, $id)
+{
+    $request->validate([
+        'email' => [
+            'email',
+            'required',
+             Rule::unique('claims')->ignore($id),
+        ],
+    ]);
+
+    // ...
+}
+```
+
 ## Render view
 
 ```php
