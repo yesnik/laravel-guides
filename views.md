@@ -93,6 +93,15 @@ Within an `@error` directive, you may echo the `$message` variable to display th
 @endif
 ```
 
+### @include
+
+The included view *will inherit all data* available in the parent view.
+Also we can pass an array of extra data to the included view.
+
+```php
+@include('product.form', ['name' => 'Kenny'])
+```
+
 ### @foreach
 
 ```php
