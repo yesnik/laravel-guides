@@ -17,5 +17,6 @@
 - `php artisan make:model Article -m` - create model with migration
 - `php artisan make:notification ProductCreated` - create `app/Notifications/ProductCreated.php`
 - `php artisan make:seeder EmployeesTableSeeder` - create `database/seeds/EmployeesTableSeeder.php`
+- `php artisan make:test Http/Controllers/ClaimControllerTest` - create test file for feature
 
 - `php artisan notifications:table` - create migration for notifications table
