@@ -38,7 +38,7 @@ class ClaimControllerTest extends TestCase
 }
 ```
 
-### Test redirect to route
+### Test redirect to route, flash message
 
 ```php
 class ClaimControllerTest extends TestCase
@@ -53,5 +53,6 @@ class ClaimControllerTest extends TestCase
         ]);
 
         $response->assertRedirect(route('claims.index'));
+        $response->assertSessionHas('success', 'Claim has been successfully created');
     }
 ```
