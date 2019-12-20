@@ -16,4 +16,42 @@ It will create file: `tests/Feature/Http/Controllers/ClaimControllerTest.php`
 
 ## Feature tests
 
-See documentation for [HTTP Tests](https://laravel.com/docs/master/http-tests)
+See HTTP Tests [documentation](https://laravel.com/docs/master/http-tests)
+
+### Test response 200 and rendered view
+
+```php
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+class ClaimControllerTest extends TestCase
+{
+    use RefreshDatabase;
+
+    /** @test */
+    public function index_returns_claims_list()
+    {
+        $response = $this->get(route('claims.index'));
+
+        $response->assertStatus(200);
+        $response->assertViewIs('claim.index');
+    }
+}
+```
+
+### Test redirect to route
+
+```php
+class ClaimControllerTest extends TestCase
+{
+    use RefreshDatabase;
+    
+    /** @test */
+    public function store_creates_claim()
+    {
+        $response = $this->post(route('claims.store'), [
+            'first_name' => 'Joe',
+        ]);
+
+        $response->assertRedirect(route('claims.index'));
+    }
+```
