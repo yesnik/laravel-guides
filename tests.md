@@ -56,3 +56,17 @@ class ClaimControllerTest extends TestCase
         $response->assertSessionHas('success', 'Claim has been successfully created');
     }
 ```
+
+## Unit tests
+
+### Create / build model
+
+```php
+# Build entity
+$claim = factory(Claim::class)->make();
+$claim->id; // null
+
+# Create record in database
+$claim = factory(Claim::class)->create();
+$claim->id; // 1
+```
