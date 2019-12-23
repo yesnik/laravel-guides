@@ -73,3 +73,11 @@ $claim->first_name; // 'Joe'
 $claim = factory(Claim::class)->create();
 $claim->id; // 1
 ```
+
+### Useful methods
+
+```php
+$this->assertDatabaseHas('claims', [
+    'last_name' => 'Johnson',
+]);
+```
