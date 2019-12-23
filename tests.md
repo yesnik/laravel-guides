@@ -63,8 +63,11 @@ class ClaimControllerTest extends TestCase
 
 ```php
 # Build entity
-$claim = factory(Claim::class)->make();
+$claim = factory(Claim::class)->make([
+    'first_name' => 'Joe',
+]);
 $claim->id; // null
+$claim->first_name; // 'Joe'
 
 # Create record in database
 $claim = factory(Claim::class)->create();
