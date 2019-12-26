@@ -81,3 +81,16 @@ $this->assertDatabaseHas('claims', [
     'last_name' => 'Johnson',
 ]);
 ```
+
+### Add faker
+
+```php
+class ClaimControllerTest extends TestCase
+{
+    use WithFaker;
+    
+    $name = $this->faker->name;
+    $email = $this->faker->safeEmail;
+    // ...
+}
+```
