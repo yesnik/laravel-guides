@@ -12,8 +12,11 @@
 
 [laravel/ui](https://github.com/laravel/ui) provides the Bootstrap, Vue, React scaffolding for Laravel app.
 
-Integrate *React*, *bootstrap*, *jquery* in the project, create views for authentication in the `resources/views/auth`:
+Integrate *bootstrap*, *jquery* in the project, create views for authentication in the `resources/views/auth`:
 
 ```bash
+php artisan ui bootstrap --auth
+
+# Run this if you want to add React support
 php artisan ui react --auth
 ```
