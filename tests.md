@@ -82,6 +82,15 @@ $this->assertDatabaseHas('claims', [
 ]);
 ```
 
+**Check authentication**
+
+```php
+$user = User::where('email', $email)->where('name', $name)->first();
+$this->assertNotNull($user);
+
+$this->assertAuthenticatedAs($user);
+```
+
 ### Add faker
 
 ```php
