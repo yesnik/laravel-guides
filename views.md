@@ -61,6 +61,15 @@ Laravel applies `htmlspecialchars()` to this variable.
 {!! $name !!}
 ```
 
+## Add script, CSS style
+
+```blade
+<!-- Styles -->
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<!-- Scripts -->
+<script src="{{ asset('js/app.js')}}"></script>
+```
+
 ## Directives
 
 ### @error
