@@ -91,6 +91,20 @@ $this->assertNotNull($user);
 $this->assertAuthenticatedAs($user);
 ```
 
+**Set authenticated user for request**
+
+```php
+/** @test */
+public function index_returns_a_view()
+{
+    $user = factory(User::class)->create();
+
+    $response = $this->actingAs($user)->get(route('home'));
+
+    $response->assertStatus(200);
+}
+```
+
 ### Add faker
 
 ```php
