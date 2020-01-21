@@ -15,6 +15,7 @@
 - `php artisan make:controller ArticlesController -r` - create controller (with CRUD actions)
 - `php artisan make:controller API/ClaimController --api` - make controller for API (with CRUD actions)
 - `php artisan make:factory EmployeeFactory --model=Employee` - create `database/factories/EmployeeFactory.php` for `Employee`
+- `php artisan make:migration add_api_token_to_users_table --table=users` - add column to `users` table
 - `php artisan make:model Article -m` - create model with migration
 - `php artisan make:notification ProductCreated` - create `app/Notifications/ProductCreated.php`
 - `php artisan make:seeder EmployeesTableSeeder` - create `database/seeds/EmployeesTableSeeder.php`
