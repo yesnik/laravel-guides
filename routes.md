@@ -30,8 +30,6 @@ It will provide 7 CRUD actions for `ArticleController`:
 
 | Method    | URI                     | Name             | Action                                         | Middleware   |
 |-----------|-------------------------|------------------|------------------------------------------------|--------------|
-| GET|HEAD  | /                       |                  | Closure                                        | web          |
-| GET|HEAD  | api/user                |                  | Closure                                        | api,auth:api |
 | GET|HEAD  | articles                | articles.index   | App\Http\Controllers\ArticleController@index   | web          |
 | POST      | articles                | articles.store   | App\Http\Controllers\ArticleController@store   | web          |
 | GET|HEAD  | articles/create         | articles.create  | App\Http\Controllers\ArticleController@create  | web          |
