@@ -20,6 +20,27 @@ Route::get('/test', function (Request $request) {
 });
 ```
 
+## Route for resource
+
+```php
+Route::resource('/articles', ArticleController::class);
+```
+It will provide 7 CRUD actions for `ArticleController`:
+
+
+| Method    | URI                     | Name             | Action                                         | Middleware   |
+|-----------|-------------------------|------------------|------------------------------------------------|--------------|
+| GET|HEAD  | /                       |                  | Closure                                        | web          |
+| GET|HEAD  | api/user                |                  | Closure                                        | api,auth:api |
+| GET|HEAD  | articles                | articles.index   | App\Http\Controllers\ArticleController@index   | web          |
+| POST      | articles                | articles.store   | App\Http\Controllers\ArticleController@store   | web          |
+| GET|HEAD  | articles/create         | articles.create  | App\Http\Controllers\ArticleController@create  | web          |
+| GET|HEAD  | articles/{article}      | articles.show    | App\Http\Controllers\ArticleController@show    | web          |
+| PUT|PATCH | articles/{article}      | articles.update  | App\Http\Controllers\ArticleController@update  | web          |
+| DELETE    | articles/{article}      | articles.destroy | App\Http\Controllers\ArticleController@destroy | web          |
+| GET|HEAD  | articles/{article}/edit | articles.edit    | App\Http\Controllers\ArticleController@edit    | web          |
+
+
 ## Call named route
 
 In the view:
