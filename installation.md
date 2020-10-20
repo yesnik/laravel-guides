@@ -25,3 +25,22 @@ Laravel Installer 4.0.5
 ```bash
 laravel new mysite
 ```
+
+5. Create `.env` and define database credentials:
+
+```bash
+cp .env.example .env
+vim .env
+```
+
+6. Generate application key:
+
+```bash
+php artisan key:generate
+```
+
+7. Run development server:
+
+```bash
+php artisan serve
+```
