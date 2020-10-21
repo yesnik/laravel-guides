@@ -73,6 +73,13 @@ php artisan db:seed
 ```bash
 php artisan tinker
 ```
+
+Laravel >= 8:
+```php
+User::factory()->count(50)->create();
+```
+
+Laravel < 8:
 ```php
 // Create 5 records of User
 factory(App\User::class, 5)->create()
