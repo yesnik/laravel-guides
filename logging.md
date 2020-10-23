@@ -9,7 +9,7 @@ Log::info('Product created');
 Log::error('Some error');
 ```
 
-Messages will be logged to `storage/logs/laravel-2020-10-23.log`
+Messages will be logged to `storage/logs/laravel.log`
 
 ## Config
 
@@ -25,16 +25,16 @@ At `config/logging.php` we can find available channels:
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['daily'],
+            'channels' => ['single'],
             'ignore_exceptions' => false,
         ],
 
         'single' => [
             'driver' => 'single',
             'path' => storage_path('logs/laravel.log'),
-            'level' => 'debug',
+            'level' => env('LOG_LEVEL', 'debug'),
         ],
         // ...
 ```
 
-**Note:** `stack` is a channel that accumulate messages from other channels.
+**Note:** `stack` is a channel that can accumulate messages from other channels.
