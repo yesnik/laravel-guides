@@ -1,12 +1,28 @@
 # Routes
 
+## List routes
+
+```bash
+php artisan route:list
+```
+
 ## Call controller
 
 ```php
 // routes/web.php
-
 Route::get('/posts/{id}', 'PostsController@show')->name('posts.show');
 Route::get('/articles', 'ArticlesController@index')->name('articles.index');
+```
+
+## Group routes
+
+```php
+// routes/web.php
+Route::controller(PostsController::class)->group(function() {
+    Route::get('/posts', 'index');
+    Route::get('/posts/{post}', 'show');
+    Route::post('/posts', 'store');
+});
 ```
 
 ## Routes for api
