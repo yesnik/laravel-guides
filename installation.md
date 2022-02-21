@@ -17,7 +17,7 @@ export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 ```bash
 laravel --version
-Laravel Installer 4.0.5
+# Laravel Installer 4.2.10
 ```
 
 4. Create new project:
