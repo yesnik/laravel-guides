@@ -127,3 +127,14 @@ protected $except = [
 ];
 ```
 
+## Redirect to named route
+
+```php
+Route::get('/', function () {
+    return view('welcome');
+})->name('home');
+
+Route::get('red', function () {
+    return redirect()->route('home');
+});
+```
