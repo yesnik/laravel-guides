@@ -135,6 +135,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('red', function () {
-    return redirect()->route('home');
+    // return redirect()->route('home');
+    return to_route('home');
 });
 ```
