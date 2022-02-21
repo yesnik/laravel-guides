@@ -1,6 +1,6 @@
 # Installation
 
-1. Download Laravel installer:
+1. Download [Laravel installer](https://github.com/laravel/installer):
 
 ```bash
 composer global require laravel/installer
