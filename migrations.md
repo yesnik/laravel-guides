@@ -5,6 +5,7 @@
 ```bash
 # Create migration
 php artisan make:migration add_user_id_to_articles_table
+php artisan make:migration create_posts_table
 
 # Apply migrations
 php artisan migrate
