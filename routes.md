@@ -139,3 +139,12 @@ Route::get('red', function () {
     return to_route('home');
 });
 ```
+
+## Scope bindings
+
+```php
+Route::get('/users/{user}/posts/{post}', function (\App\Models\User $user, \App\Models\Post $post) {
+    return $post;
+})->scopeBindings();
+```
+This route will show post 5 created by user 1: /users/1/posts/5
