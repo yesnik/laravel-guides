@@ -30,6 +30,13 @@ class PostFactory extends Factory
     }
 }
 ```
+Run tinker and create 10 records for Post:
+
+```
+php artisan tinker
+
+>>> App\Models\Post::factory(10)->create()
+```
 
 **Generate seeder**
 
