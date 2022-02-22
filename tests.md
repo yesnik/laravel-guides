@@ -7,7 +7,13 @@ Laravel supports 2 types of tests:
 
 ## Console command
 
-Generate feature test
+**Run tests with coverage**
+
+```bash
+XDEBUG_MODE=coverage php artisan test --coverage
+```
+
+**Generate feature test**
 
 ```bash
 php artisan make:test Http/Controllers/ClaimControllerTest
