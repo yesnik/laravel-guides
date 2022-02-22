@@ -46,5 +46,7 @@ Using model observers, Scout will automatically keep your search indexes in sync
     ```
     Route::get('/', function () {
         return \App\Models\Post::search('qui ex')->get();
+        // For pagination:
+        // return \App\Models\Post::search('qui ex')->paginate();
     });
     ```
