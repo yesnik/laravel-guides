@@ -20,7 +20,7 @@ Using model observers, Scout will automatically keep your search indexes in sync
     ```
     SCOUT_DRIVER=database
     ```
-4. Add `Searchable` trait to model:
+4. Add `Searchable` trait and `toSearchableArray()` method to model:
     ```
     namespace App\Models;
 
@@ -32,5 +32,19 @@ Using model observers, Scout will automatically keep your search indexes in sync
     {
         use HasFactory;
         use Searchable;
+        
+        public function toSearchableArray()
+        {
+            return [
+                'title' => $this->title,
+                'body' => $this->body,
+            ];
+        }
     }
+    ```
+5. Search posts with provided phrase:
+    ```
+    Route::get('/', function () {
+        return \App\Models\Post::search('qui ex')->get();
+    });
     ```
