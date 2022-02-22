@@ -58,6 +58,18 @@ Schema::table('articles', function (Blueprint $table) {
 });
 ```
 
+Add `user_id` column with foreign key constraint:
+
+```php
+Schema::create('posts', function (Blueprint $table) {
+    $table->id();
+    $table->foreignIdFor(\App\Models\User::class)->constrained()->onDelete('cascade');
+    $table->string('title');
+    $table->text('body');
+    $table->timestamps();
+});
+```
+
 ### Drop column / Drop foreign key
 
 ```php
