@@ -88,3 +88,9 @@ Schema::create('posts', function (Blueprint $table) {
 });
 ```
 This migration will create *Full text* index for column `body`.
+
+Use this code to use `MATCH AGAINST` query:
+
+```php
+Post::whereFullText('body', 'occaecati')->count()
+```
