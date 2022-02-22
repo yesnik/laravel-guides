@@ -11,6 +11,7 @@ Laravel supports 2 types of tests:
 
 ```bash
 XDEBUG_MODE=coverage php artisan test --coverage
+XDEBUG_MODE=coverage php artisan test --coverage --min=80
 ```
 
 **Generate feature test**
