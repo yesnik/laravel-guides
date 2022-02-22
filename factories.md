@@ -7,25 +7,28 @@ PHP library [Faker](https://github.com/fzaninotto/Faker) is used to generate fak
 **Generate factory class**
 
 ```bash
-php artisan make:factory EmployeeFactory --model=Employee
+php artisan make:factory Post
 ```
 
-This command will create `database/factories/EmployeeFactory.php`. Edit this file:
+This command will create `database/factories/PostFactory.php`:
 
 ```php
-use App\Employee;
-use Faker\Generator as Faker;
+namespace Database\Factories;
 
-$factory->define(Employee::class, function (Faker $faker) {
-    return [
-        'name' => $faker->name,
-        'email' => $faker->unique->companyEmail,
-        'moto' => $faker->sentence,
-        'bio' => $faker->text,
-        'start_date' => $faker->date,
-        'created_at' => $faker->dateTimeThisYear, 
-    ];
-});
+use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class PostFactory extends Factory
+{
+    public function definition()
+    {
+        return [
+            'user_id' => User::factory(),
+            'title' => $this->faker->sentence(),
+            'body' => $this->faker->paragraph(),
+        ];
+    }
+}
 ```
 
 **Generate seeder**
