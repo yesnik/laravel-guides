@@ -79,3 +79,12 @@ Schema::table('articles', function (Blueprint $table) {
     $table->dropColumn('user_id');
 });
 ```
+
+### Add fulltext index
+
+```php
+Schema::create('posts', function (Blueprint $table) {
+    $table->text('body')->fulltext();
+});
+```
+This migration will create *Full text* index for column `body`.
