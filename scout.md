@@ -8,15 +8,29 @@ Using model observers, Scout will automatically keep your search indexes in sync
 ## Installation
 
 1. Install package:
-  ```bash
-  composer require laravel/scout
-  ```
+    ```bash
+    composer require laravel/scout
+    ```
 2. Copy scout's config to our project:
-  ```bash
-  php artisan vendor:publish
-  ```
-  Select num related to scout, e.g. `Laravel\Scout\ScoutServiceProvider`. This command will create `config/scout.php`.
+    ```bash
+    php artisan vendor:publish
+    ```
+    Select num related to scout, e.g. `Laravel\Scout\ScoutServiceProvider`. This command will create `config/scout.php`.
 3. Edit `.env`:
-  ```
-  SCOUT_DRIVER=database
-  ```
+    ```
+    SCOUT_DRIVER=database
+    ```
+4. Add `Searchable` trait to model:
+    ```
+    namespace App\Models;
+
+    use Illuminate\Database\Eloquent\Factories\HasFactory;
+    use Illuminate\Database\Eloquent\Model;
+    use Laravel\Scout\Searchable;
+
+    class Post extends Model
+    {
+        use HasFactory;
+        use Searchable;
+    }
+    ```
