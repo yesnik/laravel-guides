@@ -2,7 +2,7 @@
 
 See Laravel Passport [docs](https://laravel.com/docs/master/passport).
 
-APIs typically use tokens to authenticate users and do not maintain session state between requests. 
+Use it if your application absolutely needs to support OAuth2, otherwise try more simple Laravel Sanctum.
 
 ## Installation
 
