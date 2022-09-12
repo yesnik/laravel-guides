@@ -53,7 +53,10 @@ Schema::create('article_tag', function (Blueprint $table) {
 ```php
 Schema::table('articles', function (Blueprint $table) {
     $table->unsignedBigInteger('user_id')->after('body');
+    // Way 1
+    $table->foreignId('user_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
     
+    // Way 2
     $table->foreign('user_id')->references('id')->on('users');
 });
 ```
