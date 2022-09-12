@@ -42,16 +42,11 @@ File `app/Article.php`:
 ```php
 class Article extends Model
 {
+    use HasFactory;
+
     // Mass assignment allowed for these attributes
     protected $fillable = ['title', 'excerpt', 'body'];
-    
-    // See "Define route key" section on this page
-    public function getRouteKey()
-    {
-        return 'slug';
-    }
 }
-
 ```
 
 ## Define route key
