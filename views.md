@@ -1,7 +1,5 @@
 # Views
 
-Compiled view's version will be stored at `storage/framework/views/25a721855d6d38279393dbd0d93c7e0aff44226a.php`.
-
 ## Extend layout
 
 File: `resources/views/welcome.blade.php`:
@@ -122,4 +120,14 @@ Also we can pass an array of extra data to the included view.
     <td>{{ $product->name }}</td>
   </tr>
 @endforeach
+```
+
+## Cache
+
+Compiled view's version will be stored in the PHP-file, e.g. `storage/framework/views/25a721855d6d38279393dbd0d93c7e0aff44226a.php`.
+
+Clear compiled views:
+
+```bash
+php artisan view:clear
 ```
