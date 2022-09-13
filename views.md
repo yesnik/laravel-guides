@@ -7,6 +7,8 @@ File: `resources/views/welcome.blade.php`:
 ```blade
 @extends('layout')
 
+@section('title', 'Welcome to our site')
+
 @section('content')
     <p>Hello world!</p>
 @endsection
@@ -18,6 +20,7 @@ File `resources/views/layout.blade.php`:
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
+    <title>@yield('title')</title>
 </head>
 <body>
     @yield('content')
