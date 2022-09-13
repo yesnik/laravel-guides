@@ -25,6 +25,14 @@ Route::controller(PostsController::class)->group(function() {
 });
 ```
 
+### Prefix routes
+
+```php
+Route::prefix('/news')->group(function() {
+    Route::get('/', [\App\Http\Controllers\IndexController::class, 'index']);
+});
+```
+
 ## Routes for api
 
 ```php
