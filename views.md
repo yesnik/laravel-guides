@@ -25,10 +25,12 @@ File `resources/views/layout.blade.php`:
 </html>
 ```
 
-## Show Pagination links
+## Output html / Disable escaping
+
+This string will not be escaped with `htmlspecialchars`:
 
 ```blade
-{!! $products->links() !!}
+{!! '<a href="/">link</a>' !!}
 ```
 
 ## Helper methods
