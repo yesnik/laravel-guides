@@ -1,5 +1,7 @@
 # Views
 
+Compiled view's version will be stored at `storage/framework/views/25a721855d6d38279393dbd0d93c7e0aff44226a.php`.
+
 ## Extend layout
 
 File: `resources/views/welcome.blade.php`:
