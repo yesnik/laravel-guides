@@ -66,13 +66,28 @@ Laravel applies `htmlspecialchars()` to this variable.
 {!! $name !!}
 ```
 
-## Add script, CSS style
+## Add script
 
 ```blade
-<!-- Styles -->
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<!-- Scripts -->
 <script src="{{ asset('js/app.js')}}"></script>
+```
+
+Or with vitejs:
+
+```blade
+@vite('resources/js/app.js')
+```
+This will create 2 tags:
+
+```html
+<script type="module" src="http://127.0.0.1:5173/@vite/client"></script>
+<script type="module" src="http://127.0.0.1:5173/resources/js/app.js"></script>
+```
+
+## Add CSS styles
+
+```blade
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 ```
 
 ## Directives
