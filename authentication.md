@@ -10,3 +10,5 @@ Laravel's authentication facilities are made up of:
 To learn more about authorizing user actions via permissions, please refer to the [authorization](https://laravel.com/docs/master/authorization) documentation.
 
 Config file: `config/auth.php`.
+
+Sessions are stored at `/storage/framework/sessions/3c3DB8KKWMcOHmRNI8CPANl8Apsb55MRsSb741mO`
