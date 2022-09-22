@@ -12,3 +12,15 @@ To learn more about authorizing user actions via permissions, please refer to th
 Config file: `config/auth.php`.
 
 Sessions are stored at `/storage/framework/sessions/3c3DB8KKWMcOHmRNI8CPANl8Apsb55MRsSb741mO`
+
+## Helpers in views
+
+```php
+@auth("web")
+    <a href="{{ route("logout") }}">Logout</a>
+@endauth
+
+@guest("web")
+    <a href="{{ route("login") }}">Login</a>
+@endguest
+```
