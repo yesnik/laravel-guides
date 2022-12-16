@@ -27,7 +27,7 @@ export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 ```bash
 laravel --version
-# Laravel Installer 4.2.10
+# Laravel Installer 4.2.17
 ```
 
 4. Create new project:
@@ -36,20 +36,7 @@ laravel --version
 laravel new mysite
 ```
 
-5. Create `.env` and define database credentials:
-
-```bash
-cp .env.example .env
-vim .env
-```
-
-6. Generate application key:
-
-```bash
-php artisan key:generate
-```
-
-7. Run development server:
+5. Run development server:
 
 ```bash
 php artisan serve
