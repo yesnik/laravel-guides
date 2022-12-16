@@ -2,7 +2,7 @@
 
 ## Via composer
 
-After you have installed PHP and Composer, you may create a new Laravel project via the Composer create-project command:
+After we have installed PHP and Composer, we can create a new Laravel project via the Composer and [laravel/laravel](https://packagist.org/packages/laravel/laravel) package:
 
 ```
 composer create-project laravel/laravel mysite-laravel
