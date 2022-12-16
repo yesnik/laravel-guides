@@ -1,5 +1,20 @@
 # Views
 
+## Config
+
+Config is located at `config/view.php`.
+
+### Change views folder
+
+At `config/view.php` we can define folder `resources/templates` for our views:
+
+```php
+    'paths' => [
+        // resource_path('views'),
+        resource_path('templates'),
+    ],
+```
+
 ## Extend layout
 
 File: `resources/views/welcome.blade.php`:
