@@ -33,7 +33,7 @@ Route::prefix('/news')->group(function() {
 });
 ```
 
-## Routes for api
+## Routes for API
 
 ```php
 // routes/api.php
@@ -62,7 +62,6 @@ It will provide 7 CRUD actions for `ArticleController`:
 | DELETE    | articles/{article}      | articles.destroy | App\Http\Controllers\ArticleController@destroy | web          |
 | GET|HEAD  | articles/{article}/edit | articles.edit    | App\Http\Controllers\ArticleController@edit    | web          |
 
-
 ## Call named route
 
 In the view:
@@ -75,6 +74,14 @@ If you want to add GET-param `?tag=python` to the link:
 
 ```blade
 <a href="{{ route('articles.index', ['tag' => 'python']) }}">Python articles</a>
+```
+
+## Route to view
+
+Visiting `/about` URI will open `about.blade.php` view:
+
+```php
+Route::view('/about', 'about');
 ```
 
 ## Pass variable to view
