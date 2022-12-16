@@ -142,7 +142,9 @@ protected $except = [
 ];
 ```
 
-## Redirect to named route
+## Redirect
+
+### to named route
 
 ```php
 Route::get('/', function () {
@@ -152,6 +154,15 @@ Route::get('/', function () {
 Route::get('red', function () {
     // return redirect()->route('home');
     return to_route('home');
+});
+```
+
+### to URI
+
+User will be redirected from URI `/about-us` to `/about`:
+```php
+Route::get('/about-us', function () {
+    return redirect('about');
 });
 ```
 
