@@ -6,12 +6,17 @@
 php artisan route:list
 ```
 
-## Call controller
+## Call controller's action
+
+File `routes/web.php`:
 
 ```php
-// routes/web.php
+use App\Http\Controllers\UserController;
+
+Route::get('/users/{id}', [UserController::class, 'show'])->name('user.show');
+
+// Deprecated since Laravel v.8: 
 Route::get('/posts/{id}', 'PostsController@show')->name('posts.show');
-Route::get('/articles', 'ArticlesController@index')->name('articles.index');
 ```
 
 ## Group routes
