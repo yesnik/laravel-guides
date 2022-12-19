@@ -23,7 +23,16 @@ class QueryCheck
 
 ### Register new middleware
 
-Edit `app/Http/Kernel.php`:
+Edit `app/Http/Kernel.php`. We can add it to global middleware:
+
+```php
+protected $middleware = [
+    // ...
+    QueryCheck::class,
+];
+```
+
+Or we can add it to route middleware:
 
 ```php
     protected $routeMiddleware = [
