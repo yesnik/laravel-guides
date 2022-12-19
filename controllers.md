@@ -115,7 +115,7 @@ File `user/login.blade.php`:
         @enderror
     </div>
     <div>
-        <input type="password" name="password" placeholder="Password" value="{{ old('password') }}" />
+        <input type="password" name="password" placeholder="Password" />
         @error('password')
             <p>{{ $message }}</p>
         @enderror
