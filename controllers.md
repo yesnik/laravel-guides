@@ -45,6 +45,23 @@ public function index()
 }
 ```
 
+### isMethod
+
+```php
+public function login(Request $request)
+{
+    if ($request->isMethod('post')) {
+        $validatedData = $request->validate([
+            'login' => 'required',
+            'password' => 'required',
+        ]);
+        dd($validatedData);
+    }
+
+    return view('user/login');
+}
+```
+
 ### validate
 
 ```php
@@ -63,6 +80,8 @@ public function store(Request $request)
 }
 ```
 
+In case of an error this method will do `302 Found` redirect to page to display errors.
+
 We can exclude current object's email from validation:
 
 ```php
@@ -80,6 +99,31 @@ public function update(Request $request, $id)
 
     // ...
 }
+```
+
+### Form template with errors
+
+File `user/login.blade.php`:
+
+```blade
+<form action="/users/login" method="post">
+    <div>
+        <input type="text" name="login" placeholder="Login" value="{{ old('login') }}" />
+
+        @error('login')
+            <p>Login is required</p>
+        @enderror
+    </div>
+    <div>
+        <input type="password" name="password" placeholder="Password" value="{{ old('password') }}" />
+        @error('password')
+            <p>Password is required</p>
+        @enderror
+    </div>
+
+    <input type="submit" name="Login" />
+    @csrf
+</form>
 ```
 
 ## Render view
