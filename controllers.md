@@ -52,8 +52,8 @@ public function login(Request $request)
 {
     if ($request->isMethod('post')) {
         $validatedData = $request->validate([
-            'login' => 'required',
-            'password' => 'required',
+            'login' => 'required | max:10',
+            'password' => 'required | min:8',
         ]);
         dd($validatedData);
     }
@@ -111,13 +111,13 @@ File `user/login.blade.php`:
         <input type="text" name="login" placeholder="Login" value="{{ old('login') }}" />
 
         @error('login')
-            <p>Login is required</p>
+            <p>{{ $message }}</p>
         @enderror
     </div>
     <div>
         <input type="password" name="password" placeholder="Password" value="{{ old('password') }}" />
         @error('password')
-            <p>Password is required</p>
+            <p>{{ $message }}</p>
         @enderror
     </div>
 
