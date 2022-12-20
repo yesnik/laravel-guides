@@ -161,14 +161,20 @@ Also we can pass an array of extra data to the included view.
 
 Get current page URL:
 
-```php
+```blade
 {{ Url::current() }}
 ```
 
 Previous page URL:
 
-```php
+```blade
 {{ Url::previous() }}
+```
+
+Absolute URL for URI - `http://127.0.0.1:8000/about`:
+
+```blade
+{{ Url::to('/about') }}
 ```
 
 ## Cache
