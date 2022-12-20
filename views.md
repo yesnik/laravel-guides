@@ -157,6 +157,20 @@ Also we can pass an array of extra data to the included view.
 @endforeach
 ```
 
+### URL
+
+Get current page URL:
+
+```php
+{{ Url::current() }}
+```
+
+Previous page URL:
+
+```php
+{{ Url::previous() }}
+```
+
 ## Cache
 
 Compiled view's version will be stored in the PHP-file, e.g. `storage/framework/views/25a721855d6d38279393dbd0d93c7e0aff44226a.php`.
