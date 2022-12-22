@@ -33,6 +33,8 @@ $post = Post::updateOrCreate(['name' => 'War and Peace']);
 Post::where('active', 0)->delete();
 $post = Post::find(1);
 $post->delete();
+
+DB::select('select * from users');
 ```
 
 ## Example of the model
