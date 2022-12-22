@@ -37,3 +37,21 @@ public function logout(Request $request)
 ```php
 session()->get('login', 'Stranger') 
 ```
+
+## Flash messages
+
+### In the controller
+
+```php
+$request->session()->flash('success', 'Login was successful!');
+```
+
+### In the view
+
+```php
+@if(session('success'))
+    <p style="color: green">
+        {{ session('success') }}
+    </p>
+@endif
+```
