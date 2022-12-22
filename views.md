@@ -61,6 +61,16 @@ Display the previous value of variable in case of error:
 <input type="text" name="last_name" value={{ old('last_name') }}>
 ```
 
+### method_field()
+
+Send form via PUT, DELETE, etc. http-method:
+
+```blade
+<form action="/users/login" method="post">
+    {{ method_field('put') }}
+</form>
+```
+
 ## Working with variables
 
 ### Escaping
