@@ -63,9 +63,11 @@ public function show(Product $product)
 ```php
 public function index()
 {
-    return new CustomerCollection(Customer::all());
+    return new ProductCollection(Product::paginate());
 }
 ```
+
+The collection of items will be paginated.
 
 ### Router
 
