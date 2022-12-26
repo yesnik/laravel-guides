@@ -41,19 +41,19 @@ php artisan tinker
 **Generate seeder**
 
 ```bash
-php artisan make:seeder EmployeesTableSeeder
+php artisan make:seeder EmployeeSeeder
 ```
 
-This command will create file `database/seeds/EmployeesTableSeeder.php`. Edit this file:
+This command will create file `database/seeds/EmployeeSeeder.php`. Edit this file:
 
 ```php
 use Illuminate\Database\Seeder;
 
-class EmployeesTableSeeder extends Seeder
+class EmployeeSeeder extends Seeder
 {
     public function run()
     {
-        App\Employee::factory(10)->create();
+        App\Models\Employee::factory(10)->create();
     }
 }
 ```
@@ -67,7 +67,7 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        $this->call(EmployeesTableSeeder::class);
+        $this->call(EmployeeSeeder::class);
     }
 }
 ```
