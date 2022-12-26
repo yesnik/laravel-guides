@@ -5,6 +5,7 @@ See [docs](https://laravel.com/docs/master/localization)
 ## Define translations
 
 Define translations for English at `lang/en/profile.php`:
+
 ```php
 return [
     'welcome' => 'Welcome',
@@ -12,11 +13,12 @@ return [
 ```
 
 Define translations for Russian at `lang/ru/profile.php`:
+
 ```php
 return [
     'welcome' => 'Добро пожаловать',
 ];
-    ```
+```
 
 ## Activate default locale
 
@@ -28,6 +30,7 @@ return [
     'locale' => 'ru',
 ];
 ```
+
 ## Use translaton in the view
 
 Edit file `resources/views/profile.blade.php`:
