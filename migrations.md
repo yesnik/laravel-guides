@@ -27,6 +27,7 @@ Schema::create('assignments', function (Blueprint $table) {
     $table->boolean('completed')->default(false);
     $table->timestamp('due_date')->nullable();
     $table->date('cancelled_on');
+    $table->dateTime('checked_at')->nullable();
     
     $table->timestamps();
 });
