@@ -5,6 +5,17 @@
 ```bash
 # Create model with migration and controller
 php artisan make:model Post -mc
+
+# Create model with:
+# Model app/Models/Customer.php 
+# Factory database/factories/CustomerFactory.php
+# Migration database/migrations/2022_12_25_015743_create_customers_table.php 
+# Seeder database/seeders/CustomerSeeder.php
+# Request app/Http/Requests/StoreCustomerRequest.php 
+# Request app/Http/Requests/UpdateCustomerRequest.php 
+# Controller app/Http/Controllers/CustomerController.php 
+# Policy app/Policies/CustomerPolicy.php
+php artisan make:model Customer --all
 ```
 
 ## Eloquent ORM methods
