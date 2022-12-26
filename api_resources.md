@@ -14,7 +14,7 @@ API resources are made of 2 entities:
 
 ```bash
 # Create a resource class
-php artisan make:resource Product
+php artisan make:resource ProductResource
 
 # Create a resource collection
 php artisan make:resource ProductCollection
@@ -26,7 +26,7 @@ Files will be created at `app/Http/Resources` folder.
 File 
 
 ```php
-class Product extends JsonResource
+class ProductResource extends JsonResource
 {
     public function toArray($request)
     {
@@ -34,8 +34,8 @@ class Product extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'detail' => $this->detail,
-            'created_at' => $this->created_at->format('d/m/Y'),
-            'updated_at' => $this->updated_at->format('d/m/Y'),
+            'createdAt' => $this->created_at->format('d/m/Y'),
+            'updatedAt' => $this->updated_at->format('d/m/Y'),
         ];
     }
 }
