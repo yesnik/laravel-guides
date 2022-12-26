@@ -1,6 +1,6 @@
 # Factories
 
-PHP library [Faker](https://github.com/fzaninotto/Faker) is used to generate fake values.
+PHP library [Faker](https://github.com/FakerPHP/Faker) is used to generate fake values.
 
 ## Console commands
 
@@ -53,7 +53,7 @@ class EmployeesTableSeeder extends Seeder
 {
     public function run()
     {
-        factory(App\Employee::class, 50)->create();
+        App\Employee::factory(10)->create();
     }
 }
 ```
