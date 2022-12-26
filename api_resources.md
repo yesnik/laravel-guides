@@ -23,7 +23,7 @@ Files will be created at `app/Http/Resources` folder.
 
 ## Example
 
-File 
+File `app/Http/Resources/V1/ProductResource.php`:
 
 ```php
 class ProductResource extends JsonResource
@@ -44,3 +44,20 @@ class ProductResource extends JsonResource
 Notice that we can access model properties directly from the `$this` variable. 
 This is because a resource class will automatically 
 proxy property and method access down to the underlying model for convenient access.
+
+Controller `app/Http/Controllers/Api/V1/CustomerController.php`:
+
+```php
+public function show(Product $product)
+{
+    return new ProductResource($product);
+}
+```
+
+File `routes/api.php`:
+
+```php
+Route::group(['prefix' => 'v1', 'namespace' => '\App\Http\Controllers\Api\V1'], function() {
+   Route::apiResource('products', ProductController::class);
+});
+```
