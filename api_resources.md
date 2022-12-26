@@ -7,19 +7,19 @@ Eloquent models and the JSON responses that are actually returned to your applic
 
 API resources are made of 2 entities: 
 
-- *resource class*. It represents a single model that needs to be transformed into a JSON structure.
-- *resource collection*. It used for transforming collections of models into a JSON structure.
+- *resource class*. We use it to transform a *single* model to JSON.
+- *resource collection*. We use it to transform *collection* of models to JSON.
 
 ## Console commands
 
 ```bash
 # Create a resource class
-php artisan make:resource ProductResource
+php artisan make:resource V1\\ProductResource
 
 # Create a resource collection
-php artisan make:resource ProductCollection
+php artisan make:resource V1\\ProductCollection
 ```
-Files will be created at `app/Http/Resources` folder.
+Files will be created at `app/Http/Resources/V1` folder.
 
 ## Example
 
