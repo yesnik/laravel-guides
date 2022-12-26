@@ -45,7 +45,11 @@ Notice that we can access model properties directly from the `$this` variable.
 This is because a resource class will automatically 
 proxy property and method access down to the underlying model for convenient access.
 
-Controller `app/Http/Controllers/Api/V1/CustomerController.php`:
+### Controller
+
+Controller `app/Http/Controllers/Api/V1/ProductController.php`:
+
+**Single model**
 
 ```php
 public function show(Product $product)
@@ -53,6 +57,17 @@ public function show(Product $product)
     return new ProductResource($product);
 }
 ```
+
+**Collection of models**
+
+```php
+public function index()
+{
+    return new CustomerCollection(Customer::all());
+}
+```
+
+### Router
 
 File `routes/api.php`:
 
