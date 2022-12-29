@@ -36,6 +36,10 @@ Route::controller(PostsController::class)->group(function() {
 Route::prefix('/news')->group(function() {
     Route::get('/', [\App\Http\Controllers\IndexController::class, 'index']);
 });
+
+Route::group(['prefix' => 'v1'], function() {
+    Route::apiResource('skills', SkillController::class);
+});
 ```
 
 ## Routes for API
