@@ -1,10 +1,10 @@
 # Factories
 
+See [docs](https://laravel.com/docs/master/eloquent-factories)
+
 PHP library [Faker](https://github.com/FakerPHP/Faker) is used to generate fake values.
 
-## Console commands
-
-**Generate factory class**
+### Generate factory class
 
 ```bash
 php artisan make:factory Post
@@ -30,6 +30,7 @@ class PostFactory extends Factory
     }
 }
 ```
+
 Run tinker and create 10 records for Post:
 
 ```
@@ -38,13 +39,13 @@ php artisan tinker
 >>> App\Models\Post::factory(10)->create()
 ```
 
-**Generate seeder**
+### Generate seeder
 
 ```bash
 php artisan make:seeder EmployeeSeeder
 ```
 
-This command will create file `database/seeds/EmployeeSeeder.php`. Edit this file:
+This command will create file `database/seeds/EmployeeSeeder.php`:
 
 ```php
 use Illuminate\Database\Seeder;
@@ -58,27 +59,20 @@ class EmployeeSeeder extends Seeder
 }
 ```
 
-**Call custom seeder from DatabaseSeeder**
-
-Edit file `database/seeds/DatabaseSeeder.php`:
+In `run()` we can create related models. Employee has many tasks:
 
 ```php
-class DatabaseSeeder extends Seeder
-{
-    public function run()
-    {
-        $this->call(EmployeeSeeder::class);
-    }
-}
+App\Models\Employee::factory(10)
+    ->hasTasks(25)->create();
 ```
 
-**Seed database**
+### Seed database
 
 ```bash
 php artisan db:seed
 ```
 
-**Generate records using factory**
+### Generate records using factory
 
 ```bash
 php artisan tinker
@@ -136,4 +130,18 @@ $factory->define(Employee::class, function (Faker $faker) {
         'due_date' => $faker->date 
     ];
 });
+```
+
+### Call custom seeder from DatabaseSeeder
+
+Edit file `database/seeds/DatabaseSeeder.php`:
+
+```php
+class DatabaseSeeder extends Seeder
+{
+    public function run()
+    {
+        $this->call(EmployeeSeeder::class);
+    }
+}
 ```
