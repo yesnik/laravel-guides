@@ -53,6 +53,32 @@ Component can accept attributes. Define `x-nav-link` component at `resources/vie
 <a {{ $attributes }}>{{ $slot }}</a>
 ```
 
+### Pass variable to layout
+
+2 ways:
+
+- `<x-slot:someVar>`
+- `<x-layout myvar="Hello">`
+
+File `resources/views/home.blade.php`:
+
+```blade
+<x-layout promo="Buy now, 50% discount!">
+    <x-slot:heading>
+        Home page
+    <x-slot:heading>
+
+    <h1>Hello from Home</h1>
+</x-layout>
+```
+
+Layout file `resources/views/Components/layout.blade.php`:
+
+```blade
+<h1>{{ $heading }}</h1>
+<h2>{{ $promo }}</h2>
+```
+
 ## Extend layout
 
 File: `resources/views/welcome.blade.php`:
