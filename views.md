@@ -4,11 +4,23 @@
 
 Config is located at `config/view.php`.
 
+### Change views folder
+
+At `config/view.php` we can define folder `resources/templates` for our views:
+
+```php
+    'paths' => [
+        // resource_path('views'),
+        resource_path('templates'),
+    ],
+```
+
+
 ## Components
 
 File `resources/views/home.blade.php`:
 
-```html
+```blade
 <x-layout>
     <h1>Hello from Home</h1>
 </x-layout>
@@ -16,7 +28,7 @@ File `resources/views/home.blade.php`:
 
 Define `x-layout` component at `resources/views/Components/layout.blade.php`:
 
-```html
+```blade
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,19 +49,8 @@ Define `x-layout` component at `resources/views/Components/layout.blade.php`:
 
 Component can accept attributes. Define `x-nav-link` component at `resources/views/Components/nav-link.blade.php`:
 
-```html
+```blade
 <a {{ $attributes }}>{{ $slot }}</a>
-```
-
-### Change views folder
-
-At `config/view.php` we can define folder `resources/templates` for our views:
-
-```php
-    'paths' => [
-        // resource_path('views'),
-        resource_path('templates'),
-    ],
 ```
 
 ## Extend layout
