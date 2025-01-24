@@ -84,16 +84,21 @@ Layout file `resources/views/Components/layout.blade.php`:
 Component's file `resources/views/Components/nav-link.blade.php`:
 
 ```blade
-@props(['active' => false])
+@props(['active' => false, 'type' => 'a'])
 
+@if($type === 'a')
 <a {{ $attributes }} class="{{ $active ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium" 
     aria-current="{{ request()->is('/') ? 'page' : 'false' }}">{{ $slot }}</a>
+@else
+<button {{ $attributes }} class="{{ $active ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium" 
+    aria-current="{{ request()->is('/') ? 'page' : 'false' }}">{{ $slot }}</button>
+@endif
 ```
 
-We can use it in the template - `:active`:
+In the template we can use `:active` (added `:` to execute PHP) and `type` attributes:
 
 ```blade
-<x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
+<x-nav-link href="/" :active="request()->is('/')" type="button">Home</x-nav-link>
 <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
 ```
 
