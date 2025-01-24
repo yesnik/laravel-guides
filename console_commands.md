@@ -8,6 +8,7 @@
 - `php artisan tinker` - run interactive console
 - `php artisan migrate` - apply migrations
 - `php artisan db:seed` - seed database with `database/seeds/DatabaseSeeder.php`
+- `php artisan db:show` - show info about the current database
 
 ## Generate code
 
