@@ -56,12 +56,25 @@ DB::select('select * from users');
 File `app/Article.php`:
 
 ```php
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
 class Article extends Model
 {
     use HasFactory;
 
     // Mass assignment allowed for these attributes
     protected $fillable = ['title', 'excerpt', 'body'];
+}
+```
+
+### Define table for a model
+
+```php
+class Job extends Model
+{
+    protected $table = 'job_listings';
 }
 ```
 
