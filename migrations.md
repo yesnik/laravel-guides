@@ -3,15 +3,19 @@
 ## Console commands
 
 ```bash
-# Create migration
+# Create a migration
 php artisan make:migration add_user_id_to_articles_table
 php artisan make:migration create_posts_table
+```
 
+```bash
 # Apply migrations
 php artisan migrate
+```
 
+```bash
 # Rollback one latest migration
-php artisan migrate:rollback --step=1
+php artisan migrate:rollback
 ```
 
 ## Examples
@@ -91,6 +95,7 @@ Schema::create('posts', function (Blueprint $table) {
     $table->text('body')->fulltext();
 });
 ```
+
 This migration will create *Full text* index for column `body`.
 
 Use this code to use `MATCH AGAINST` query:
