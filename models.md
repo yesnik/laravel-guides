@@ -40,6 +40,7 @@ Post::where('created_at', '>=', '2019-06-01')->get()->count();
 $user = User::find(1);
 $posts = $user->posts()->get();
 
+$post = Post::create(['name' => 'PHP is here']);
 $post = Post::firstOrCreate(['name' => 'War and Peace']);
 $post = Post::firstOrNew(['name' => 'War and Peace']);
 $post = Post::updateOrCreate(['name' => 'War and Peace']);
@@ -64,17 +65,11 @@ class Article extends Model
 {
     use HasFactory;
 
+    // Define custom table name for a model (if it's not 'articles')
+    protected $table = 'old_articles';
+
     // Mass assignment allowed for these attributes
     protected $fillable = ['title', 'excerpt', 'body'];
-}
-```
-
-### Define table for a model
-
-```php
-class Job extends Model
-{
-    protected $table = 'job_listings';
 }
 ```
 
