@@ -18,6 +18,11 @@ php artisan migrate
 php artisan migrate:rollback
 ```
 
+```bash
+# Clear DB and run migrations
+php artisan migrate:fresh
+```
+
 ## Examples
 
 ### Create table
