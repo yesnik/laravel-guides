@@ -62,24 +62,15 @@ Schema::create('article_tag', function (Blueprint $table) {
 
 ```php
 Schema::table('articles', function (Blueprint $table) {
-    $table->unsignedBigInteger('user_id')->after('body');
     // Way 1
-    $table->foreignId('user_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-    
+    $table->foreignIdFor(\App\Models\User::class)->constrained()->cascadeOnDelete();
+
     // Way 2
+    $table->unsignedBigInteger('user_id')->after('body');
+    // Way 2.1
+    $table->foreignId('user_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+    // Way 2.2
     $table->foreign('user_id')->references('id')->on('users');
-});
-```
-
-Add `user_id` column with foreign key constraint:
-
-```php
-Schema::create('posts', function (Blueprint $table) {
-    $table->id();
-    $table->foreignIdFor(\App\Models\User::class)->constrained()->onDelete('cascade');
-    $table->string('title');
-    $table->text('body');
-    $table->timestamps();
 });
 ```
 
