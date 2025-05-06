@@ -52,6 +52,26 @@ $post->delete();
 DB::select('select * from users');
 ```
 
+## Eager loading
+
+```php
+$jobs = Job::with('employer')->get();
+
+// Eager Loading Multiple Relationships
+$books = Book::with(['author', 'publisher'])->get();
+
+// Eager load all of the book's authors and all of the author's personal contacts
+$books = Book::with('author.contacts')->get();
+
+// Eager load multiple nested relationships
+$books = Book::with([
+    'author' => [
+        'contacts',
+        'publisher',
+    ],
+])->get();
+```
+
 ## Example of the model
 
 File `app/Article.php`:
